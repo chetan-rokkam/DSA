@@ -50,7 +50,9 @@ class Solution {
     }
 }
 
-//
+//Check if array is sorted and rotated
+
+
 var check = function(nums) {
     let cnt = 0
     for (let i = 0 ; i < nums.length; i++) {
@@ -167,4 +169,5 @@ class Solution {
 }
 
 //
+
 
