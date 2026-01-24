@@ -1,7 +1,7 @@
 //Find missing numbers in an array
 
-class Solution {
-    missingNumber(nums) {
+
+function missingNumber(nums) {
     const n = nums.length;
     
     const expectedSum = (n * (n + 1)) / 2;
@@ -9,13 +9,13 @@ class Solution {
     const actualSum = nums.reduce((acc, current) => acc + current, 0);
     
     return expectedSum - actualSum;
-    }
+    
 }
 
 //Maximum Consecutive Ones
 
-class Solution {
-    findMaxConsecutiveOnes(nums) {
+
+function findMaxConsecutiveOnes(nums) {
       let maxCount = 0;
     let currentCount = 0;
     
@@ -31,13 +31,13 @@ class Solution {
     }
     
     return maxCount;
-    }
+    
 }
 
 //Find the number that appears once, and other numbers twice.
 
-class Solution {
-    singleNumber(nums) {
+
+function singleNumber(nums) {
         const frequencyMap = new Map();
 
     for (const num of nums) {
@@ -51,7 +51,7 @@ class Solution {
     }
 }
 
-}
+
 
 
 //Longest subarray with sum K
@@ -84,3 +84,4 @@ function longestSubarrayWithSumK(nums, k) {
 
 console.log(longestSubarrayWithSumK([10, 5, 2, 7, 1, 9], 15)); 
 console.log(longestSubarrayWithSumK([-3, 2, 1], 6));          
+
