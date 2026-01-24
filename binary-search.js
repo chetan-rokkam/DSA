@@ -1,7 +1,6 @@
 //Binary Search to find X in sorted array
 
-class Solution {
-    search(nums, target) {
+function  search(nums, target) {
        let left = 0;
     let right = nums.length - 1;
 
@@ -19,12 +18,11 @@ class Solution {
 
     return -1; 
 }
-}
 
 //Implement Lower Bound
 
-class Solution {
-    lowerBound(nums, x) {
+
+ function lowerBound(nums, x) {
       let left = 0;
       let right = nums.length - 1;
       let ans = nums.length
@@ -42,12 +40,12 @@ class Solution {
       }
       return ans
     }
-}
+
 
 //Implement Upper Bound
 
-class Solution {
-    upperBound(nums, x) {
+
+function upperBound(nums, x) {
       let left = 0;
     let right = nums.length - 1;
     let ans = nums.length; 
@@ -64,15 +62,14 @@ class Solution {
     }
 
     return ans;
-
-    }
 }
+
 
 //Search Insert Position
 
 
-class Solution {
-    searchInsert(nums, target) {
+
+function searchInsert(nums, target) {
     let left = 0;
     let right = nums.length - 1;
 
@@ -89,14 +86,13 @@ class Solution {
     }
     return left;
 }
-}
+
     
 //Floor/Ceil in Sorted Array
 
 
 
-class Solution{
-    getFloorAndCeil(nums, x) {
+function getFloorAndCeil(nums, x) {
     let low = 0;
     let high = nums.length - 1;
     
@@ -122,13 +118,12 @@ class Solution{
     return `${floor} ${ceil}`;
 }
 
-}
 
  //Find the first or last occurrence of a given number in a sorted array
 
 
- class Solution {
-    searchRange(nums, target) {
+
+  function searchRange(nums, target) {
     const findBound = (isFirst) => {
         let low = 0;
         let high = nums.length - 1;
@@ -160,9 +155,6 @@ class Solution{
     const last = findBound(false);
     return [first, last];
 }
-
-
-     }
     
 // console.log(searchRange([5, 7, 7, 8, 8, 10], 8));
 // console.log(searchRange([5, 7, 7, 8, 8, 10], 6)); 
@@ -172,8 +164,7 @@ class Solution{
 //Count occurrences of a number in a sorted array with duplicates
 
 
-class Solution {
-    countOccurrences(arr, target) {
+function countOccurrences(arr, target) {
         // Your code goes here
     const findBound = (isFirst) => {
         let low = 0;
@@ -203,13 +194,13 @@ class Solution {
     const lastIndex = findBound(false);
     return (lastIndex - firstIndex) + 1;
 }
-}
+
 
 //Search in Rotated Sorted Array I
 
 
-class Solution {
-    search(nums, k) {
+
+function search(nums, k) {
         let left = 0;
         let right = nums.length - 1;
          
@@ -238,7 +229,7 @@ class Solution {
          }
          return - 1
     }
-}
+
 
 
 
