@@ -1,8 +1,7 @@
 
 //Largest element in an array
 
-class Solution {
-    largestElement(nums) {
+function largestElement(nums) {
    let max = nums[0]
 for (let i = 1; i < nums.length; i++) {
     if (nums[i] > max) {
@@ -11,13 +10,12 @@ for (let i = 1; i < nums.length; i++) {
 }
 return max
 
-    }
 }
 
 //Second Largest Element in an Array without sorting
 
-class Solution {
-    secondLargestElement(nums) {
+
+function secondLargestElement(nums) {
    let max = nums[0]
    let sec = -Infinity
 for (let i = 1; i < nums.length; i++) {
@@ -30,13 +28,12 @@ for (let i = 1; i < nums.length; i++) {
 
 }
 return sec === -Infinity ? -1 : sec
-    }
+    
 }
 
 //Check if the array is sorted
 
-class Solution {
-    isSorted(nums) {
+function isSorted(nums) {
 
         for(let i = 1; i < nums.length;i++) {
             if(nums[i] >= nums[i-1]) {
@@ -47,13 +44,12 @@ class Solution {
         }
 
         return true;
-    }
 }
 
 //Check if array is sorted and rotated
 
 
-var check = function(nums) {
+function check(nums) {
     let cnt = 0
     for (let i = 0 ; i < nums.length; i++) {
      if (nums[i] > nums[(i + 1) % nums.length]){
@@ -66,8 +62,8 @@ var check = function(nums) {
 
 //Remove duplicates from Sorted array
 
-class Solution {
-    removeDuplicates(nums) {
+
+function removeDuplicates(nums) {
         if (nums.length === 0) return 0;
 
     let k = 0;
@@ -80,7 +76,6 @@ class Solution {
         }
     }
     return k + 1;
-  }
 } 
 
 //Left Rotate an array by one place
@@ -121,8 +116,8 @@ var rotate = function(nums, k) {
 
 //Left Rotate an array by one place
 
-    class Solution {
-    rotateArrayByOne(nums) {
+
+function rotateArrayByOne(nums) {
 
     k = k % nums.length;
     
@@ -135,13 +130,13 @@ var rotate = function(nums, k) {
         nums[nums.length - 1] = one;
     }
     
-   }
-        
 }
+        
+
 
  //Move Zeros to end
  
- var moveZeroes = function(nums) {
+function moveZeroes (nums) {
      let currInd = 0;
 
 
@@ -156,8 +151,8 @@ var rotate = function(nums, k) {
 
 //Linear Search
 
-class Solution {
-    linearSearch(nums, target) {
+
+function linearSearch(nums, target) {
         
         for (let i = 0; i < nums.length; i++) {
         if (nums[i] === target) {
@@ -165,9 +160,10 @@ class Solution {
         }
     }
     return -1;
-    }
 }
 
-//
+
+
+
 
 
