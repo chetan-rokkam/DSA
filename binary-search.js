@@ -165,7 +165,6 @@ function getFloorAndCeil(nums, x) {
 
 
 function countOccurrences(arr, target) {
-        // Your code goes here
     const findBound = (isFirst) => {
         let low = 0;
         let high = arr.length - 1;
@@ -277,5 +276,123 @@ const numbers = [7, 8, 1, 2, 3, 3, 3, 4, 5, 6];
 
 console.log(search(numbers, 3));
 console.log(search(numbers, 10))
+
+
+//Find minimum in Rotated Sorted Array
+
+
+  function  findMin(arr) {
+       let low = 0;
+    let high = arr.length - 1;
+    let ans = Infinity;
+
+    while (low <= high) {
+        let mid = Math.floor(low + (high - low) / 2);
+
+        if (arr[low] <= arr[high]) {
+            ans = Math.min(ans, arr[low]);
+            break;
+        }
+        if (arr[low] <= arr[mid]) {
+            ans = Math.min(ans, arr[low]);
+            low = mid + 1;
+        } else {
+            ans = Math.min(ans, arr[mid]);
+            high = mid - 1;
+        }
+    }
+
+    return ans;
+    }
+
+
+
+//Find out how many times has an array been rotated
+
+
+   function findKRotation(nums) {
+      let left = 0;
+      let right = nums.length - 1;
+
+      if (nums[left] <= nums[right]) return 0;
+
+      while (left <= right) {
+      let mid = Math.floor((left + right) / 2);
+
+      if (mid > 0 && nums[mid] < nums[mid - 1]) {
+        return mid;
+      }
+      if (mid < nums.length - 1 && nums[mid] > nums[mid + 1]) {
+        return mid + 1;
+      }
+      if (nums[mid] >= nums[left]) {
+        left = mid + 1
+      }
+      else {
+        right = mid - 1
+      }
+    }
+    return 0;
+}
+
+
+
+//Single element in a Sorted Array
+
+
+  function  singleNonDuplicate(nums) {
+    
+     let left = 0;
+    let right = nums.length - 1;
+
+    if (nums.length === 1) return nums[0];
+    if (nums[0] !== nums[1]) return nums[0];
+    if (nums[right] !== nums[right - 1]) return nums[right];
+
+    left = 1;
+    right = nums.length - 2;
+
+    while (left <= right) {
+        let mid = Math.floor(left + (right - left) / 2);
+
+        if (nums[mid] !== nums[mid - 1] && nums[mid] !== nums[mid + 1]) {
+            return nums[mid];
+        }
+
+        if ((mid % 2 === 0 && nums[mid] === nums[mid + 1]) || 
+            (mid % 2 === 1 && nums[mid] === nums[mid - 1])) {
+            left = mid + 1; 
+        } else {
+            right = mid - 1; 
+        }
+    }
+
+    return -1; 
+
+    }
+5
+
+//Find peak element
+
+
+   function findPeakElement(arr) {
+     let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+
+    if (arr[mid] < arr[mid + 1]) {
+      left = mid + 1;
+    }
+    else {
+      right = mid - 1;
+    }
+  }
+  return left;
+    }
+
+
+
 
 
